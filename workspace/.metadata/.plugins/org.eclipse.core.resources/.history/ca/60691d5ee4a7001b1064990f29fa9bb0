@@ -1,0 +1,32 @@
+package com.jhl.dao;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
+
+import com.jhl.dto.MemberVO;
+
+@Repository
+public class MemberDAOImpl implements MemberDAO {
+	
+	@Inject
+	private SqlSession sqlSession;
+	
+	private static final String NameSpace = "com.jhl.mappers.memberMapper";
+
+	@Override
+	public List<MemberVO> selelctMember() throws Exception {
+		return sqlSession.selectList(NameSpace+".selectMember");
+	}
+	
+	@Override
+	public int isUserExist(String id) throws Exception {
+		int bool = 0;
+		bool = sqlSession.selectOne(NameSpace+".isUserExist", id);
+		System.out.println(bool);
+		return bool;
+	}
+}

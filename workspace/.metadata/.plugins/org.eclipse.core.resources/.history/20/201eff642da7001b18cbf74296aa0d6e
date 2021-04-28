@@ -1,0 +1,5 @@
+package com.jhl.dao;
+
+public class MemberDAOImpl {
+
+}
