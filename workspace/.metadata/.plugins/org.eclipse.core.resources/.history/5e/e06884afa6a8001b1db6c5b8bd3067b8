@@ -1,0 +1,38 @@
+package com.jhl.controller;
+
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.jhl.dto.MemberVO;
+import com.jhl.service.MemberService;
+
+
+@Controller
+public class DoLogin {
+	
+	@Inject
+	private MemberService service;
+	
+	@RequestMapping(value = "/board", method = {RequestMethod.POST, RequestMethod.GET})
+	public String login(HttpServletRequest request) throws Exception {
+		//redirect하기전 addFlashAttribute 메서드에 담아 놓은 파라미터 값 호출
+		String loggedinId = request.getParameter("loggedinId"); 
+		List<MemberVO> member = service.selectOne(loggedinId);
+		HttpSession session = request.getSession();
+		session.setAttribute("loggedinId", member.get(0).getId());
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("loggedinId", member.get(0).getId());
+//		mav.setViewName("/board");
+		
+		return "board";
+	}
+}

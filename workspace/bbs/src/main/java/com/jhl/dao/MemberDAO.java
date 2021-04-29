@@ -12,4 +12,7 @@ public interface MemberDAO {
 	
 	public List<MemberVO> selectOne(String id) throws Exception;
 
+	public List<MemberVO> selectOneByMemberNumber(int memberNumber) throws Exception;
+
+
 }

@@ -11,5 +11,7 @@ public interface MemberService {
 	public int isIdExist(String id) throws Exception;
 	
 	public List<MemberVO> selectOne(String id) throws Exception;
+	
+	public List<MemberVO> selectOneByMemberNumber(int memberNumber) throws Exception;
 
 }

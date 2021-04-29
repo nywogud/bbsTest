@@ -31,5 +31,10 @@ public class MemberServiceImpl implements MemberService {
 	public List<MemberVO> selectOne(String id) throws Exception {
 		return dao.selectOne(id);
 	}
+	
+	@Override
+	public List<MemberVO> selectOneByMemberNumber(int memberNumber) throws Exception{
+		return dao.selectOneByMemberNumber(memberNumber);
+	}
 
 }

@@ -36,4 +36,9 @@ public class MemberDAOImpl implements MemberDAO {
 		
 	}
 	
+	@Override
+	public List<MemberVO> selectOneByMemberNumber(int memberNumber) throws Exception{
+		return sqlSession.selectList(NameSpace+ ".selectOneByMemberNumber", memberNumber);
+	}
+	
 }
