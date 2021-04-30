@@ -1,0 +1,19 @@
+package com.jhl.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+
+@Controller
+public class HomeController {
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(){
+		
+		//여기에 if 조건 걸고 cookie가 존재하면 DoLogin(/post)로 리다이렉트함.
+		
+		return "login";
+	}
+	
+}

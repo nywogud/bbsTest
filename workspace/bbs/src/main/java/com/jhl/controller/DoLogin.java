@@ -27,25 +27,13 @@ public class DoLogin {
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
 	public ModelAndView login(HttpServletRequest request, Model model) throws Exception {
 
-//		redirect하기전 addFlashAttribute 메서드에 담아 놓은 파라미터 값 호출
-//		Map<String, ?> flashMap = RequestContextUtils.getInputFlashMap(request);
-//		Integer loggidInMemberNumber = (Integer) flashMap.get("memberNumberInLog");
 
 		HttpSession session = request.getSession();
 		Integer loggedInMemberNumber = (Integer) session.getAttribute("loggedInMemberNumber");
-		System.out.println(loggedInMemberNumber);
-		
-		// loggedinMaintain
-		Map<String, ?> flashMapMaintain = RequestContextUtils.getInputFlashMap(request);
-		String loggedinMaintain = (String) flashMapMaintain.get("loggedinMaintain");
-		System.out.println(loggedinMaintain);
 
 		List<MemberVO> member = service.selectOneByMemberNumber(loggedInMemberNumber);
 
-		
-
 		ModelAndView mav = new ModelAndView();
-		System.out.println(member.get(0).getId());
 		mav.addObject("loggedinId", member.get(0).getId());
 		mav.setViewName("board");
 

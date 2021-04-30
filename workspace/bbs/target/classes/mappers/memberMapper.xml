@@ -20,8 +20,6 @@
 	<select id="selectOneByMemberNumber" parameterType="int" resultType="memberVO">
 		SELECT * FROM member WHERE memberNumber = #{memberNumber}
 	</select>
- 
-
 </mapper>
 
 
