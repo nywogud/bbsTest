@@ -1,5 +1,8 @@
 package com.jhl.controller;
 
+import java.util.List;
+
+import javax.inject.Inject;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,14 +10,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.jhl.dto.PostVO;
+import com.jhl.service.PostService;
 
 
 
 @Controller
 public class HomeController {
 	
+	@Inject
+	private PostService postService; 
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home( 
+	public ModelAndView home( 
 			@CookieValue(value="isChekedLoginMaintain", required=false) 
 			Cookie isChekedLoginMaintain,
 			HttpServletRequest request) throws Exception {
@@ -31,9 +41,16 @@ public class HomeController {
 		}
 		
 		if(value != null) {
-			return "redirect:/board";
+			
+			List<PostVO> post = postService.selectAll();
+			ModelAndView mav = new ModelAndView();
+			mav.addObject("post", post);
+			mav.setViewName("redirect:/board");
+			return mav;
 		}else {
-			return "login";
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("login");
+			return mav;
 		}
 		
 		

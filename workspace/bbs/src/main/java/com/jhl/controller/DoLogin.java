@@ -15,14 +15,19 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
 import com.jhl.dto.MemberVO;
+import com.jhl.dto.PostVO;
 import com.jhl.service.MemberService;
+import com.jhl.service.PostService;
 import com.mysql.cj.api.mysqla.result.Resultset.Type;
 
 @Controller
 public class DoLogin {
 
 	@Inject
-	private MemberService service;
+	private MemberService memberservice;
+	
+	@Inject
+	private PostService Postservice;
 
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
 	public ModelAndView login(HttpServletRequest request, Model model) throws Exception {
@@ -31,10 +36,13 @@ public class DoLogin {
 		HttpSession session = request.getSession();
 		Integer loggedInMemberNumber = (Integer) session.getAttribute("loggedInMemberNumber");
 
-		List<MemberVO> member = service.selectOneByMemberNumber(loggedInMemberNumber);
+		List<MemberVO> member = memberservice.selectOneByMemberNumber(loggedInMemberNumber);
+		
+		List<PostVO> post = Postservice.selectAll();
 
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("loggedinId", member.get(0).getId());
+		mav.addObject("member", member.get(0));
+		mav.addObject("post", post);
 		mav.setViewName("board");
 
 		return mav;

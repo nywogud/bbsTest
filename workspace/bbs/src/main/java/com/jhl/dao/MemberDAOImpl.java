@@ -26,7 +26,6 @@ public class MemberDAOImpl implements MemberDAO {
 	public int isIdExist(String id) throws Exception {
 		int bool;
 		bool = sqlSession.selectOne(NameSpace+".isIdExist", id);
-		System.out.println("DAO : " + bool);
 		return bool;
 	}
 	

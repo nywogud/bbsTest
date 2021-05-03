@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="package com.jhl.controller;"/>
 			<item value="1234`"/>
 			<item value="1234"/>
 			<item value="Servlet"/>

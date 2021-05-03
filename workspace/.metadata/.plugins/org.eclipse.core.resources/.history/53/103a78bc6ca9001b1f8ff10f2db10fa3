@@ -1,0 +1,5 @@
+package com.jhl.service;
+
+public class PostServiceImpl {
+
+}

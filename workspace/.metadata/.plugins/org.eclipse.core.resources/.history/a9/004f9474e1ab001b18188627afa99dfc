@@ -1,0 +1,38 @@
+package com.jhl.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class PostPasswordCheck {
+
+	@RequestMapping(value = "/postPasswordCheck", method = RequestMethod.POST)
+	public ModelAndView write(HttpServletRequest request) throws Exception {
+
+		ModelAndView mav = new ModelAndView();
+
+		if (request.getParameter("postPassword") != null && request.getParameter("postPasswordCheck") != null) {
+
+			String postPassword = request.getParameter("postPassword");
+			String postPasswordCheck = request.getParameter("postPasswordCheck");
+
+			if (!(postPassword.equals(postPasswordCheck))) {
+				String isMatching = "no";
+				mav.addObject("isMatching", isMatching);
+				mav.setViewName("../../postPasswordSet");
+				return mav;
+			} else {
+				String isMatching = "yes";
+				mav.setViewName("../../postPasswordSet");
+				mav.addObject("isMatching", isMatching);
+				mav.addObject("postPassword", postPassword);
+				return mav;
+			}
+		}
+
+		return mav;
+	}
+}

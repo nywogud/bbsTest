@@ -1,0 +1,15 @@
+package com.jhl.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class WritePost {
+	
+	@RequestMapping(value="/writePost", method = RequestMethod.GET)
+	public String write() {
+		
+		return "temp";
+	}
+	
+}
