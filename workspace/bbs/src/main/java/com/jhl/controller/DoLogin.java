@@ -24,10 +24,10 @@ import com.mysql.cj.api.mysqla.result.Resultset.Type;
 public class DoLogin {
 
 	@Inject
-	private MemberService memberservice;
+	private MemberService memberService;
 	
 	@Inject
-	private PostService Postservice;
+	private PostService postService;
 
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
 	public ModelAndView login(HttpServletRequest request, Model model) throws Exception {
@@ -36,9 +36,9 @@ public class DoLogin {
 		HttpSession session = request.getSession();
 		Integer loggedInMemberNumber = (Integer) session.getAttribute("loggedInMemberNumber");
 
-		List<MemberVO> member = memberservice.selectOneByMemberNumber(loggedInMemberNumber);
+		List<MemberVO> member = memberService.selectOneByMemberNumber(loggedInMemberNumber);
 		
-		List<PostVO> post = Postservice.selectAll();
+		List<PostVO> post = postService.selectAll();
 
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("member", member.get(0));

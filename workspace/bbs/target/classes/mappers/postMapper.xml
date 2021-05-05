@@ -8,4 +8,33 @@
 	<select id="selectAll" resultType="postVO">
 		select * from post
 	</select>
+	
+	<select id="insertPost" parameterType="com.jhl.dto.PostVO">
+
+		INSERT INTO post (
+			postTitle, 
+			contents, 
+			postWriter, 
+			postPassword)
+		VALUES (
+			#{postTitle},
+			#{contents},
+			#{postWriter},
+			#{postPassword}
+			
+		)
+	</select>
+	
+	<select id="insertPostNoPassword" parameterType="com.jhl.dto.PostVO">
+
+		INSERT INTO post (
+			postTitle, 
+			contents, 
+			postWriter)
+		VALUES (
+			#{postTitle},
+			#{contents},
+			#{postWriter}
+		)
+	</select>
 </mapper>

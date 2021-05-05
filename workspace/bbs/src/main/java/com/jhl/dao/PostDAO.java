@@ -8,4 +8,8 @@ public interface PostDAO {
 	
 	public List<PostVO> selectAll() throws Exception;
 
+	public void insertPost(PostVO postVO) throws Exception;
+
+	public void insertPostNoPassword(PostVO postVO) throws Exception;
+
 }

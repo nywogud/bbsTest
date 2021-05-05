@@ -48,14 +48,14 @@
 	<form action="/insertPost" method="post">
 		<label style="padding-right: 12px">제목</label><input type="text"
 			name="postTitle" style="width: 95%;"><br>
-		<hr>
+		<hr style="border: solid 1px #E6E6E6;">
 		<div>
 			<label style="padding-right: 9px; position: relative; bottom: 135px;">내용</label>
-			<textarea name="postTitle" cols="50" rows="13"
+			<textarea name="postContents" cols="50" rows="13"
 				style="width: 95%; resize: none;"></textarea>
 			<br>
 		</div>
-		<hr>
+		<hr style="border: solid 1px #E6E6E6;">
 		<div style="float: right; padding-right: 25px;">
 			<input type="button" onclick="setPostPassword();" name="postPassword"
 				value="비밀번호 설정" style="position: relative; bottom: 3.5px;">
@@ -63,7 +63,14 @@
 
 			<label class="postPassword" style="font-size: 23px; margin-left:2px;">N</label>
 		</div>
+		<br>
+		<hr style="border: solid 1px #5882FA;">
+		<br>
+		<div style="text-align : center;">
+			<input type="submit" onclick="/insertPost" value="저장">
+			<input type="button" onclick="window.location.href='/board'" value="취소">
 		
+		</div>
 	</form>
 		
 </body>

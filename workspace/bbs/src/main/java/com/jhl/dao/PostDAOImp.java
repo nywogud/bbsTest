@@ -22,7 +22,14 @@ public class PostDAOImp implements PostDAO {
 		return sqlSession.selectList(NameSpace + ".selectAll");
 	}
 	
+	@Override
+	public void insertPost(PostVO postVO) throws Exception{
+		sqlSession.insert(NameSpace + ".insertPost", postVO);
+	}
 	
-	
+	@Override
+	public void insertPostNoPassword(PostVO postVO) throws Exception{
+		sqlSession.insert(NameSpace + ".insertPostNoPassword", postVO);
+	}
 
 }

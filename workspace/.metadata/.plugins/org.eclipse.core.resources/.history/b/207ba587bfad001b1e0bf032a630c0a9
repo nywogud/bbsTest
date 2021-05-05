@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.jhl.mappers.postMapper">
+	
+	<select id="selectAll" resultType="postVO">
+		select * from post
+	</select>
+	
+	<select id="insertPost" parameterType="com.jhl.dto">
+
+		INSERT INTO post (
+			postTitle, 
+			contents, 
+			postWriter, 
+			postPassword)
+		VALUES (
+			#{postTitle},
+			#{contents},
+			#{postWriter},
+			#{postPassword}
+			
+		)
+	</select>
+</mapper>

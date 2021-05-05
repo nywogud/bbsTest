@@ -1,0 +1,19 @@
+package com.jhl.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class InsertPost {
+	
+	@RequestMapping(value = "/insertPost", method=RequestMethod.POST)
+	public ModelAndView insetPost(HttpServletRequest request) {
+		System.out.println("insertPost가 보내는 값 : " + PostPasswordController.postPassword);
+		return null;
+	}
+
+}

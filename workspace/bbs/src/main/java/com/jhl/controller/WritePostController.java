@@ -24,12 +24,12 @@ public class WritePostController {
 	@RequestMapping(value = "/writePost", method = { RequestMethod.POST, RequestMethod.GET })
 	public ModelAndView write(HttpServletRequest request) throws Exception {
 
-		HttpSession session = request.getSession();
-		Integer loggedinMemberNumber = (Integer) session.getAttribute("loggedInMemberNumber");
-
-		List<MemberVO> member = memberService.selectOneByMemberNumber(loggedinMemberNumber);
+//		HttpSession session = request.getSession();
+//		Integer loggedinMemberNumber = (Integer) session.getAttribute("loggedInMemberNumber");
+//
+//		List<MemberVO> member = memberService.selectOneByMemberNumber(loggedinMemberNumber);
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("member", member.get(0));
+//		mav.addObject("member", member.get(0));
 		mav.setViewName("writePost");
 
 		

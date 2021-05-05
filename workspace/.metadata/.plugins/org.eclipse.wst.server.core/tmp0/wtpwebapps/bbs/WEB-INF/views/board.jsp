@@ -15,7 +15,7 @@
 
 <body>
 
-	<h3>게시글 목록</h3>
+	<h3>게시판</h3>
 	<div>
 		<table class="table table-bordered">
 			<thead>
@@ -39,7 +39,7 @@
 		</table>
 	</div>
 
-	<hr>
+	<br>
 	<div style="text-align:center">
 		<a class="btn btn-default" href="writePost">글쓰기</a>
 		
