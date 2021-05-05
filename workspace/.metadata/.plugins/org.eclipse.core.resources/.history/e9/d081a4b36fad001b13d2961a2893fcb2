@@ -1,0 +1,3 @@
+function postPassword(postPassword){
+	postPassword = postPassword;
+}

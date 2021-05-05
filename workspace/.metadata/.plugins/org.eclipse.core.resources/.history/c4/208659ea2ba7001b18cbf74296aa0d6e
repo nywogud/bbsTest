@@ -1,5 +1,0 @@
-package com.jhl.dao;
-
-public interface MemberDAO {
-
-}

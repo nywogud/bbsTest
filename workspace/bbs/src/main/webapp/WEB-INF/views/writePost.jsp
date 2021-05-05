@@ -1,3 +1,6 @@
+<%@page import="java.util.function.Function"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -10,6 +13,9 @@
 <title>게시글 작성</title>
 <link rel="stylesheet"
 	href="<c:url value='/resources/css/bootstrap.css'/>">
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="/resources/js/postPassword.js"></script>
 <script type="text/javascript">
 	function setPostPassword() {
 		var name = 'postPasswordSet';
@@ -26,6 +32,11 @@
 				+ _left
 				+ ', width=500, height=130, status=no, menubar=no, toolbar=no, resize=no';
 		window.open('postPasswordSet.jsp', name, option);
+		
+	}
+	
+	function changeStatus(){
+		$('.postPassword').empty().append("Y");
 	}
 </script>
 
@@ -49,17 +60,11 @@
 			<input type="button" onclick="setPostPassword();" name="postPassword"
 				value="비밀번호 설정" style="position: relative; bottom: 3.5px;">
 
-			<label style="font-size: 23px;">N</label>
-			
 
+			<label class="postPassword" style="font-size: 23px; margin-left:2px;">N</label>
 		</div>
-
+		
 	</form>
-
-	${postPassword}
-
-	<br>
-
-
+		
 </body>
 </html>

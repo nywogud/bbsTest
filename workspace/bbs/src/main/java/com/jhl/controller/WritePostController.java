@@ -21,9 +21,8 @@ public class WritePostController {
 	@Inject
 	MemberService memberService;
 
-	@RequestMapping(value = "/writePost", method = {RequestMethod.POST, RequestMethod.GET})
-	public ModelAndView write(HttpServletRequest request) 
-			throws Exception {
+	@RequestMapping(value = "/writePost", method = { RequestMethod.POST, RequestMethod.GET })
+	public ModelAndView write(HttpServletRequest request) throws Exception {
 
 		HttpSession session = request.getSession();
 		Integer loggedinMemberNumber = (Integer) session.getAttribute("loggedInMemberNumber");
@@ -32,15 +31,12 @@ public class WritePostController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("member", member.get(0));
 		mav.setViewName("writePost");
+
 		
-		if(request.getAttribute("postPassword") !=null) {
-			mav.addObject("postPassword", request.getAttribute("postPassword"));
-			mav.addObject("member", member.get(0));
-			mav.setViewName("writePost");
-			
-			return mav;
-		}
 
 		return mav;
 	}
+
+	
+
 }

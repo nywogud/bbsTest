@@ -1,0 +1,24 @@
+package com.jhl.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+public class PostPasswordController {
+		
+		private String postPassword;
+
+		@RequestMapping(value = "/postPassword", method = RequestMethod.POST)
+		public void postPassword(HttpServletRequest request) throws Exception {
+			
+			this.postPassword = request.getParameter("postPassword");
+			System.out.println("PostPasswordController" + postPassword);
+		}
+
+		public String getPostPassword() {
+			return postPassword;
+		}
+
+	}
+

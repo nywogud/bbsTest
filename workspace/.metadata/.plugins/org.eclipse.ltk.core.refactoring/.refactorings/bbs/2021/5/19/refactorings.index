@@ -3,3 +3,10 @@
 1620005251008	Copy file
 1620005266124	Delete element
 1620025139424	Copy compilation unit
+1620107642441	Move 'writePost.jsp' to 'webapp'
+1620198083200	Delete element
+1620198363142	Encapsulate field 'postPassword'
+1620199993549	Delete element
+1620201125617	Delete element
+1620201862543	Delete element
+1620201945846	Delete element
