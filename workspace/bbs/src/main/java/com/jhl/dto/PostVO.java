@@ -43,6 +43,10 @@ public class PostVO {
 		this.postPassword = setPostPassword;
 		
 	}
+	public void setPostNumber(int postNumber) {
+		this.postNumber = postNumber;
+		
+	}
 	
 	
 

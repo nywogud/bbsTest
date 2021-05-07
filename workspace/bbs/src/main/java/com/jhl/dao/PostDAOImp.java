@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
@@ -30,6 +31,21 @@ public class PostDAOImp implements PostDAO {
 	@Override
 	public void insertPostNoPassword(PostVO postVO) throws Exception{
 		sqlSession.insert(NameSpace + ".insertPostNoPassword", postVO);
+	}
+	
+	@Override
+	public void updateviews(int postNumber) throws Exception{
+		sqlSession.insert(NameSpace + ".updateviews" , postNumber);
+	}
+	
+	@Override
+	public List<PostVO> selectOneByPostNumber(int postNumber) throws Exception{
+		return sqlSession.selectList(NameSpace+".selectOneByPostNumber", postNumber);
+	}
+	
+	@Override
+	public void updatePostPassword(PostVO postVO) throws Exception{
+		sqlSession.update(NameSpace+".updatePostPassword", postVO);
 	}
 
 }

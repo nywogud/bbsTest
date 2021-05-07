@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.jhl.mappers.postMapper">
+	
+	<select id="selectAll" resultType="postVO">
+		select * from post
+	</select>
+	
+	<select id="insertPost" parameterType="com.jhl.dto.PostVO">
+
+		INSERT INTO post (
+			postTitle, 
+			contents, 
+			postWriter, 
+			postPassword)
+		VALUES (
+			#{postTitle},
+			#{contents},
+			#{postWriter},
+			#{postPassword}
+			
+		)
+	</select>
+	
+	<select id="insertPostNoPassword" parameterType="com.jhl.dto.PostVO">
+
+		INSERT INTO post (
+			postTitle, 
+			contents, 
+			postWriter)
+		VALUES (
+			#{postTitle},
+			#{contents},
+			#{postWriter}
+		)
+	</select>
+	
+	<select id="updateviews" parameterType="int">
+		UPDATE post SET views = views+1  WHERE postNumber= #{postNumber}
+	</select>
+	
+	<select id="selectOneByPostNumber" parameterType="int" resultType="postVO">
+		SELECT * FROM post WHERE postNumber=#{postNumber}
+	</select>
+	
+	<select id="updatePostPassword" parameterType="String" parameterType="int">
+		
+	</select>
+</mapper>

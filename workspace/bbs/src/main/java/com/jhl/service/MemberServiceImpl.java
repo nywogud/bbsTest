@@ -36,5 +36,5 @@ public class MemberServiceImpl implements MemberService {
 	public List<MemberVO> selectOneByMemberNumber(int memberNumber) throws Exception{
 		return dao.selectOneByMemberNumber(memberNumber);
 	}
-
+	
 }

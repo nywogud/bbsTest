@@ -1,0 +1,23 @@
+package com.jhl.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class PostPasswordFromDetails {
+	
+	@RequestMapping(value="/postPasswordFromDetails", method=RequestMethod.POST)
+	public void postPasswordFromDetails(HttpServletRequest request) {
+		
+		
+		Integer postNumber = Integer.parseInt(request.getParameter("postNumber"));
+		
+		String postPassword = request.getParameter("postPassword");
+		
+		
+	}
+	
+}

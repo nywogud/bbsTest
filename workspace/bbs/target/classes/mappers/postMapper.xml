@@ -37,4 +37,16 @@
 			#{postWriter}
 		)
 	</select>
+	
+	<select id="updateviews" parameterType="int">
+		UPDATE post SET views = views+1  WHERE postNumber= #{postNumber}
+	</select>
+	
+	<select id="selectOneByPostNumber" parameterType="int" resultType="postVO">
+		SELECT * FROM post WHERE postNumber=#{postNumber}
+	</select>
+	
+	<select id="updatePostPassword" parameterType="com.jhl.dto.PostVO">
+		UPDATE post SET postPassword = #{postPassword}  WHERE postNumber= #{postNumber}
+	</select>
 </mapper>

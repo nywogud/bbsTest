@@ -14,4 +14,12 @@ public interface PostService {
 
 	public void insertPostNoPassword(PostVO postVO) throws Exception;
 
+
+	public void updateviews(int postNumber) throws Exception;
+
+
+	public List<PostVO> selectOneByPostNumber(int postNumber) throws Exception;
+
+	public void updatePostPassword(PostVO postVO) throws Exception;
+
 }

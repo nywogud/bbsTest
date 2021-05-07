@@ -31,5 +31,19 @@ public class PostServiceImpl implements PostService  {
 		dao.insertPostNoPassword(postVO);
 	}
 	
+	@Override
+	public void updateviews(int postNumber) throws Exception{
+		dao.updateviews(postNumber);
+	}
+	
+	@Override
+	public List<PostVO> selectOneByPostNumber(int postNumber) throws Exception{
+		return dao.selectOneByPostNumber(postNumber);
+	}
+	
+	@Override
+	public void updatePostPassword(PostVO postVO) throws Exception{
+		dao.updatePostPassword(postVO);
+	}
 
 }

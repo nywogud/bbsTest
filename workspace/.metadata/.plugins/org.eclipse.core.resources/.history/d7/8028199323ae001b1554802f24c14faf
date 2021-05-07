@@ -1,0 +1,92 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>게시글 목록</title>
+<link rel="stylesheet"
+	href="<c:url value='/resources/css/bootstrap.css'/>">
+
+<script>
+	function checkPostPassword(postPasswordParam, postNumberParam){
+		
+		//파라미터는 잘 넘어옴.
+		postPassword = postPasswordParam;
+		postNumber = postNumberParam;
+		
+		alert(postPassword);
+		alert(postNumber);
+		
+		var name = 'checkPostPassword';
+
+		var _width = '500';
+		var _height = '380';
+
+		var _left = Math.ceil((window.screen.width - _width) / 2);
+		var _top = Math.ceil((window.screen.height - _height) / 2);
+
+		var option = 'top='
+				+ _top
+				+ ', left='
+				+ _left
+				+ ', width=500, height=130, status=no, menubar=no, toolbar=no, resize=no';
+		window.open('checkPostPassword.jsp', name, option);
+		
+	}
+	
+	function goDetails(){
+		window.location.href="/postDetails";
+	}
+	
+</script>
+</head>
+
+<body>
+
+	<h3>게시판</h3>
+	<div>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th style="width: 5%; text-align: center;">번호</th>
+					<th style="width: 79%; text-align: center;">제목</th>
+					<th style="width: 8%; text-align: center;">작성자</th>
+					<th style="width: 8%; text-align: center;">조회수</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${post}" var="post">
+					<tr>
+						<c:set var="postPassword" value="${post.postPassword}"></c:set>
+
+						<td style="text-align: center">${post.postNumber}</td>
+						<c:if test="${postPassword ne null}">
+							<td><a
+								href="redirect:/postDetails?postNumber=${post.postNumber}"
+								onclick="checkPostPassword(${post.postPassword}, ${post.postNumber});">${post.postTitle}</a></td>
+						</c:if>
+						<c:if test="${postPassword eq null}">
+							<td><a
+								href="redirect:/postDetails?postNumber=${post.postNumber}">${post.postTitle}</a></td>
+						</c:if>
+						<td style="text-align: center">${post.postWriter}</td>
+						<td style="text-align: center">${post.views}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+
+	<br>
+	<div style="text-align: center">
+		<a class="btn btn-default" href="writePost">글쓰기</a>
+
+	</div>
+
+
+</body>
+</html>

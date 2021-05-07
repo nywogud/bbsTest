@@ -15,7 +15,6 @@ public class PostPasswordController {
 		public void postPassword(String postPassword){
 			
 			PostPasswordController.setPostPassword = postPassword;
-			System.out.println(PostPasswordController.setPostPassword);
 			
 		}
 

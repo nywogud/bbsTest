@@ -1,7 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +35,7 @@
 						data : {"postPassword" : $("#postPassword").val()},
 
 						success : function() {
-							opener.changeStatus();//자식창에서 부모창의 함수 호출. 반대는 popup
+							window.opener.changeStatus();//자식창에서 부모창의 함수 호출. 반대는 popup
 							window.close();
 						},
 						error : function(request, status, error) {
@@ -63,9 +63,11 @@
 			<h3>비밀번호 설정</h3>
 			<div>
 				<div style="display: inline-block;">
-					<label style="margin-right: 46px">비밀번호 : </label> <input
-						type="password" id="postPassword"> <br> <label>비밀번호
-						재입력 : </label> <input type="password" id="postPasswordCheck"><br>
+					<label style="margin-right: 46px">비밀번호 : </label> 
+					<input type="password" id="postPassword"> 
+					<br> 
+					<label>비밀번호 재입력 : </label> 
+					<input type="password" id="postPasswordCheck"><br>
 				</div>
 				<div style="display: inline-block;">
 					<input id="btn"

@@ -12,3 +12,14 @@
 1620201945846	Delete element
 1620225978319	Encapsulate field 'postPassword'
 1620228894973	Encapsulate field 'postNumber'
+1620260267066	Copy file
+1620260382563	Copy compilation unit
+1620260647065	Copy file
+1620275663650	Rename type 'HomeController'
+1620276349413	Rename type 'InsertPost'
+1620276364293	Rename type 'PostDetails'
+1620286443809	Copy file
+1620286481393	Rename resource 'postPasswordSet2.jsp'
+1620286803469	Rename resource 'temp.jsp'
+1620286843008	Rename resource 'PostDetails.jsp'
+1620358261308	Delete element
