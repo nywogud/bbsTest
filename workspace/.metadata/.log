@@ -1326,3 +1326,83 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-07 13:05:26.392
 !MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:18.287
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:18.288
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@e80fc9d[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=960)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:18.303
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:18.608
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:26.698
+!MESSAGE Boot LS startup time from start to initialized: 8388ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:27.670
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.HiPhBDeaisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:27.675
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:27.678
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:27.679
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:27.680
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:27.680
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.HiPhBDea => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:27.691
+!MESSAGE classpath=48 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:27.696
+!MESSAGE buffering callback sts4.classpath.HiPhBDea bbs false 48
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:27.696
+!MESSAGE executing callback sts4.classpath.HiPhBDea 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:02:29.707
+!MESSAGE executing callback sts4.classpath.HiPhBDea FAILED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2021-05-07 14:02:29.708
+!MESSAGE 
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1950)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2085)
+	at org.springframework.tooling.ls.eclipse.commons.LSP4ECommandExecutor.executeClientCommand(LSP4ECommandExecutor.java:37)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:178)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-07 14:13:24.849
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-07 14:13:24.862
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-07 14:14:52.098
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-07 14:14:52.102
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:21:13.576
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.HiPhBDea
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:21:13.577
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.HiPhBDea
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:21:13.577
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:21:13.578
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.HiPhBDea => OK

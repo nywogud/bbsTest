@@ -61,7 +61,7 @@
 	</table>
 	<input type="button" onclick="setPostPassword(${post.postNumber});"
 		name="postPassword" value="비밀번호 설정">
-	<input type="button" onclick="location.href='/board'" value="게시판으로 이동">
+	<input type="button" onclick="/board" value="게시판으로 이동">
 
 </body>
 </html>
